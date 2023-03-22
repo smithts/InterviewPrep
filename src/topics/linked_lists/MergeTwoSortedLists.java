@@ -20,6 +20,7 @@ public class MergeTwoSortedLists {
         ListNode merged;
         ListNode mergedCrawler;
 
+        //Set head node
         if (list1.val < list2.val) {
             merged = list1;
             list1 = list1.next;
@@ -29,6 +30,7 @@ public class MergeTwoSortedLists {
         }
         mergedCrawler = merged;
 
+        //process until one list is empty
         while (list1 != null && list2 != null) {
             if (list1.val < list2.val) {
                 mergedCrawler.next = list1;
@@ -40,12 +42,14 @@ public class MergeTwoSortedLists {
             mergedCrawler = mergedCrawler.next;
         }
 
+        //append remaining elements
         if (list1 == null) {
             mergedCrawler.next = list2;
         } else {
             mergedCrawler.next = list1;
         }
 
+        //finished
         return merged;
 
     }
