@@ -1,4 +1,4 @@
-package topics.linked_lists;
+package leetcode.linked_lists;
 
 public class MergeTwoSortedLists {
 
